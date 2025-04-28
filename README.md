@@ -34,3 +34,90 @@ SAP Fiori Web Application for Inversion Module
 1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
 
 
+
+```
+SAP_Firori
+├─ .DS_Store
+├─ .eslintrc
+├─ package-lock.json
+├─ package.json
+├─ README.md
+├─ tsconfig.json
+├─ ui5-local.yaml
+├─ ui5.yaml
+└─ webapp
+   ├─ .DS_Store
+   ├─ Component.js
+   ├─ controller
+   │  ├─ .DS_Store
+   │  ├─ App.controller.js
+   │  ├─ BaseController.js
+   │  ├─ Main.controller.js
+   │  ├─ salesforecast
+   │  │  ├─ .DS_Store
+   │  │  └─ pages
+   │  │     └─ SalesForecastMainTable.controller.js
+   │  └─ SalesForecast.controller.js
+   ├─ css
+   │  └─ style.css
+   ├─ i18n
+   │  └─ i18n_es_MX.properties
+   ├─ index.html
+   ├─ manifest.json
+   ├─ model
+   │  └─ models.js
+   └─ view
+      ├─ App.view.xml
+      ├─ Main.view.xml
+      ├─ Main.view_2.xml
+      └─ salesforecast
+         ├─ components
+         │  └─ SideNavigation.fragment.xml
+         ├─ pages
+         │  └─ SalesForecastMainTable.view.xml
+         └─ SalesForecast.view.xml
+
+```
+```
+SAP_Firori
+├─ .DS_Store
+├─ .eslintrc
+├─ package-lock.json
+├─ package.json
+├─ README.md
+├─ tsconfig.json
+├─ ui5-local.yaml
+├─ ui5.yaml
+└─ webapp
+   ├─ .DS_Store
+   ├─ Component.js
+   ├─ controller
+   │  ├─ .DS_Store
+   │  ├─ App.controller.js
+   │  ├─ BaseController.js
+   │  ├─ Main.controller.js
+   │  ├─ salesforecast
+   │  │  ├─ .DS_Store
+   │  │  └─ pages
+   │  │     └─ SalesForecastMainTable.controller.js
+   │  └─ SalesForecast.controller.js
+   ├─ css
+   │  └─ style.css
+   ├─ i18n
+   │  └─ i18n_es_MX.properties
+   ├─ index.html
+   ├─ manifest.json
+   ├─ model
+   │  └─ models.js
+   └─ view
+      ├─ App.view.xml
+      ├─ Main.view.xml
+      ├─ Main.view_2.xml
+      └─ salesforecast
+         ├─ components
+         │  └─ SideNavigation.fragment.xml
+         ├─ pages
+         │  └─ SalesForecastMainTable.view.xml
+         └─ SalesForecast.view.xml
+
+```

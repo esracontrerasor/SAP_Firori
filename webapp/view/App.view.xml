@@ -1,7 +1,15 @@
-<mvc:View controllerName="com.inv.sapfiroriwebinversion.controller.App"
-    displayBlock="true"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <App id="app">
-    </App>
+<!-- webapp/view/App.view.xml -->
+<mvc:View
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m"
+  controllerName="com.inv.sapfiroriwebinversion.controller.App"
+  displayBlock="true">
+  <App id="app">                                     <!-- ① -->
+    <pages>                                          <!-- ② -->
+      <Page id="homePage" title="Home">            
+        <content>
+        </content>
+      </Page>
+    </pages>
+  </App>
 </mvc:View>
