@@ -16,6 +16,7 @@ sap.ui.define([
 
     oMyAvatar.setActive(!oMyAvatar.getActive());
 
+    
     // Create a popover with the menu
     let oPopover = new sap.m.Popover({
         title: "Opciones",
