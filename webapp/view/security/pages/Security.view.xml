@@ -1,0 +1,52 @@
+<mvc:View
+    controllerName="com.inv.sapfiroriwebinversion.controller.security.Security"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:tnt="sap.tnt"
+xmlns:f="sap.f"
+xmlns:core="sap.ui.core"
+>
+
+<tnt:ToolPage id="IdToolPage1Security" visible="true">
+
+        <tnt:header>
+    <f:ShellBar
+        id="IdShellBar1Security"
+        title="Pronostico de Ventas"
+        homeIcon="{i18n>login.logo}"
+        showMenuButton="true"
+        menuButtonPressed="onMenuButtonPress"
+    >
+        <f:profile>
+	    <m:Avatar id="IdAvatar1Security" initials="UI" press="onAvatarPress"/>
+	</f:profile>
+    </f:ShellBar>
+</tnt:header>   
+
+     <tnt:sideContent>
+    <core:Fragment fragmentName="com.inv.sapfiroriwebinversion.view.security.components.SideNavigation" type="XML" />
+</tnt:sideContent>
+
+      <tnt:mainContents>
+
+<!--Contenedor de navegación para cada una de las páginas abiertas en este contenedor-->
+<m:NavContainer id="IdNavContainer1Security" initialPage="page50">
+   <m:pages>
+<!--(Page20) Pronostico de Ventas (Principal Data Table) -->
+   <m:ScrollContainer id="ScrollContainer20Security" horizontal="false" vertical="true" height="100%">
+   <mvc:XMLView id="XMLView20SecurityTableView" viewName="com.inv.sapfiroriwebinversion.view.security.pages.SecurityUsuarioTable"/>
+    </m:ScrollContainer>
+   </m:pages>
+</m:NavContainer>
+
+</tnt:mainContents>
+
+</tnt:ToolPage>
+
+    <m:Page
+        id="IdPageSecurity"
+        title="{i18n>title}"
+    >
+        
+    </m:Page>
+</mvc:View>

@@ -1,0 +1,115 @@
+<mvc:View
+    controllerName="com.inv.sapfiroriwebinversion.controller.security.pages.SecurityTable"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:tnt="sap.ui.core"
+    xmlns:tl="sap.ui.table"
+>
+            
+    <tl:Table id="IdTable1SecurityTable"
+             rows="{/value}"
+            selectionMode="Single"
+            alternateRowColors="true"
+            selectionBehavior="RowOnly"
+            enableSelectAll="false"
+            enableColumnReordering="true"
+            rowActionCount="2"
+            busyIndicatorDelay="0">
+        <!-- Aquí agregaríamos las columnas de la tabla -->
+         <tl:columns>
+                
+    <tl:Column id="IdColumnUSERIDSecurity" sortProperty="USERID" width="10rem" autoResizable="true" resizable="true">
+        <m:Label id="IdLabelUSERIDSecurity" text="USUARIO" />
+        <tl:template>
+            <m:Text id="IdTextUSERIDSecurity" text="{USERID}" wrapping="false"/>
+        </tl:template>
+    </tl:Column>
+
+    
+
+    <tl:Column id="IdColumnOrgVtaSecurity" sortProperty="USERNAME" width="15rem" autoResizable="true" resizable="true">
+        <m:Label id="IdLabelOrgVtaSecurity" text="NOMBRE" />
+        <tl:template>
+            <m:Text id="IdTextOrgVtaSecurity" text="{USERNAME}" wrapping="false" />
+        </tl:template>
+    </tl:Column>
+
+    <tl:Column id="IdColumnNombreOrgVtaSecurity" sortProperty="ALIAS" width="10rem" autoResizable="true" resizable="true">
+        <m:Label id="IdLabelNombreOrgVtaSecurity" text="APODO" />
+        <tl:template>
+            <m:Text id="IdTextNombreOrgVtaSecurity" text="{ALIAS}" wrapping="false" />
+        </tl:template>
+    </tl:Column>
+
+    <tl:Column id="IdColumnMaterialSecurity" sortProperty="FIRSTNAME" width="15rem" autoResizable="true" resizable="true">
+        <m:Label id="IdLabelMaterialSecurity" text="NOMBRE" />
+        <tl:template>
+            <m:Text id="IdTextMaterialSecurity" text="{FIRSTNAME}" wrapping="false" />
+        </tl:template>
+    </tl:Column>
+
+    <tl:Column id="IdColumnNombreMaterialSecurity" sortProperty="LASTNAME" width="15rem" autoResizable="true" resizable="true">
+        <m:Label id="IdLabelNombreMaterialSecurity" text="APELLIDO" />
+        <tl:template>
+            <m:Text id="IdTextNombreMaterialSecurity" text="{LASTNAME}" wrapping="false" />
+        </tl:template>
+    </tl:Column>    
+    
+        <tl:Column id="IdColumnNacimientoSecurity" sortProperty="BIRTHDAYDATE" width="10rem" autoResizable="true" resizable="true">
+        <m:Label id="IdLabelNacimientoSecurity" text="NACIMIENTO" />
+        <tl:template>
+            <m:Text id="IdTextNacimientoSecurity" text="{BIRTHDAYDATE}" wrapping="false" />
+        </tl:template>
+    </tl:Column>   
+
+    <tl:Column id="IdColumnCategoriaSecurity" sortProperty="EMAIL" width="15rem" autoResizable="true" resizable="true">
+        <m:Label id="IdLabelCategoriaSecurity" text="CORREO" />
+        <tl:template>
+            <m:Text id="IdTextCategoriaSecurity" text="{EMAIL}" wrapping="false" />
+        </tl:template>
+    </tl:Column>
+
+    <tl:Column id="IdColumnMarcaSecurity" sortProperty="PHONENUMBER" width="10rem" autoResizable="true" resizable="true">
+        <m:Label id="IdLabelMarcaSecurity" text="TELEFONO" />
+        <tl:template>
+            <m:Text id="IdTextMarcaSecurity" text="{PHONENUMBER}" wrapping="false" />
+        </tl:template>
+    </tl:Column>
+
+    <tl:Column id="IdColumnPresentaSecurity" sortProperty="FUNCTION" width="10rem" autoResizable="true" resizable="true">
+        <m:Label id="IdLabelPresentaSecurity" text="PUESTO" />
+        <tl:template>
+            <m:Text id="IdTextPresentaSecurity" text="{FUNCTION}" wrapping="false" />
+        </tl:template>
+    </tl:Column>
+
+    <tl:Column id="IdColumnTamanoSecurity" sortProperty="DEPARTMENT" width="14rem" autoResizable="true" resizable="true">
+        <m:Label id="IdLabelTamanoSecurity" text="DEPARTAMENTO" />
+        <tl:template>
+            <m:Text id="IdTextTamanoSecurity" text="{DEPARTMENT}" wrapping="false" />
+        </tl:template>
+    </tl:Column>
+
+    <tl:Column id="IdColumnSaborSecurity" sortProperty="CITY" width="10rem" autoResizable="true" resizable="true">
+        <m:Label id="IdLabelSaborSecurity" text="CIUDAD" />
+        <tl:template>
+            <m:Text id="IdTextSaborSecurity" text="{CITY}" wrapping="false" />
+        </tl:template>
+    </tl:Column>
+
+    <tl:Column id="IdColumnEnvaseSecurity" sortProperty="STATE" width="15rem" autoResizable="true" resizable="true">
+        <m:Label id="IdLabelEnvaseSecurity" text="ESTADO" />
+        <tl:template>
+            <m:Text id="IdTextEnvaseSecurity" text="{STATE}" wrapping="false" />
+        </tl:template>
+    </tl:Column>
+
+    <tl:Column id="IdColumnPiezasCjaSecurity" sortProperty="COUNTRY" width="15rem" autoResizable="true" resizable="true">
+        <m:Label id="IdLabelPiezasCjaSecurity" text="PAIS" />
+        <tl:template>
+            <m:Text id="IdTextPiezasCjaSecurity" text="{COUNTRY}" wrapping="false" />
+        </tl:template>
+    </tl:Column>
+</tl:columns>
+    </tl:Table>
+</mvc:View>

@@ -87,16 +87,26 @@
             },
             "routes": [
                 {
-                    "name": "RouteMain",
-                    "pattern": "home",
+                    "name": "Login",
+                    "pattern": "",
                     "target": [
-                        "TargetMain"
+                        "TargetLogin"
                     ]
                 },
                 {
                     "name":"RouteSalesForecast",
                     "pattern":"salesforecast",
                     "target": ["TargetSalesForecast"]
+                },
+                {
+                    "name":"RouteLogin",
+                    "pattern":"login",
+                    "target": ["TargetLogin"]
+                },
+                {
+                    "name":"RouteSecurity",
+                    "pattern":"security",
+                    "target": ["TargetSecurity"]
                 }
             ],
             "targets": {
@@ -112,7 +122,27 @@
                     "clearControlAggregation": false,
                     "viewlevel": 2,
                     "path": "com.inv.sapfiroriwebinversion.view.salesforecast",
-      "viewPath": "com.inv.sapfiroriwebinversion.view.salesforecast"
+                    "viewPath": "com.inv.sapfiroriwebinversion.view.salesforecast"
+                },
+                "TargetLogin":{
+                    "viewId": "login",
+                    "viewName": "Login",
+                    "viewType": "XML",
+                    "transition":"slide",
+                    "clearControlAggregation": false,
+                    "viewlevel": 2,
+                    "path": "com.inv.sapfiroriwebinversion.view.security",
+                    "viewPath": "com.inv.sapfiroriwebinversion.view.security"
+                },
+                "TargetSecurity":{
+                    "viewId": "security",
+                    "viewName": "Security",
+                    "viewType": "XML",
+                    "transition":"slide",
+                    "clearControlAggregation": false,
+                    "viewlevel": 2,
+                    "path": "com.inv.sapfiroriwebinversion.view.security.pages",
+                    "viewPath": "com.inv.sapfiroriwebinversion.view.security.pages"
                 }
             }
         },
