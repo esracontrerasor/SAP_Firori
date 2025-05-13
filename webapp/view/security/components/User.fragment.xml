@@ -1,0 +1,36 @@
+<core:FragmentDefinition 
+controllerName="com.inv.sapfiroriwebinversion.controller.security.pages.SecurityTable"
+xmlns="sap.m" 
+xmlns:core="sap.ui.core">
+    <Dialog id="UserDialog" title="Detalles del Usuario" class="sapUiResponsivePadding">
+        <content>
+            <VBox id="_IDGenVBox1">
+                <Text id="IdUSERID" text="Usuario: {/USERID}" />
+                <Text id="IdUSERNAME" text="Nombre: {/USERNAME}" />
+                <Text id="IdEMAIL" text="Correo: {/EMAIL}" />
+                <Text id="IdALIAS" text="Apodo: {/ALIAS}" />
+                <Text id="IdFIRSTNAME" text="Nombre (s): {/FIRSTNAME}" />
+                <Text id="IdLASTNAME" text="Apellido: {/LASTNAME}" />
+                <Text id="IdBIRTHDAYDATE" text="Fecha de nacimiento: {/BIRTHDAYDATE}" />
+                <Text id="IdPHONENUMBER" text="Teléfono: {/PHONENUMBER}" />
+                <Text id="IdFUNCTION" text="Puesto: {/FUNCTION}" />
+                <Text id="IdDEPARTMENT" text="Departamento: {/DEPARTMENT}" />
+                <Text id="IdCITY" text="Ciudad: {/CITY}" />
+                <Text id="IdSTATE" text="Estado: {/STATE}" />
+                <Text id="IdCOUNTRY" text="Pais: {/COUNTRY}" />
+                <Text id="IdEMPLOYEEID" text="Teléfono: {/EMPLOYEEID}" />
+            </VBox>
+        </content>
+        
+        <buttons>
+            <Button id="EditarButton" text="Editar" press=".onUpdateDialog" />
+        </buttons>
+        
+        <buttons>
+            <Button id="EliminarButton" text="Eliminar" press=".onDeleteDialog" />
+        </buttons>
+        <buttons>
+            <Button id="CerrarButton" text="Cerrar" press=".onCloseDialog" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

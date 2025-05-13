@@ -2,7 +2,8 @@ sap.ui.define([
     "com/inv/sapfiroriwebinversion/controller/BaseController", 
     "sap/ui/model/json/JSONModel", 
     "sap/ui/core/BusyIndicator",
-    "sap/m/MessageToast"
+    "sap/m/MessageToast",
+    "sap/ui/core/Fragment"
 ], function (BaseController, JSONModel, BusyIndicator, MessageToast) {
     "use strict";
 
@@ -50,6 +51,70 @@ sap.ui.define([
                     MessageToast.show("Error: " + error.message);
                 });
           
+        },
+        onRowSelectionChange: function (oEvent) {
+    // Obtener el elemento seleccionado
+        var oSelectedItem = oEvent.getParameter("rowContext"); // Para sap.m.Table
+        if (!oSelectedItem) {
+            MessageToast.show("No se seleccionó ninguna fila");
+            return;
         }
+
+        // Obtener el contexto del modelo asociado a la fila seleccionada
+       // var oContext = oSelectedItem.getBindingContext();
+        var oData = oSelectedItem.getObject(); // Obtiene los datos de la fila seleccionada
+
+        this.onVer(this, oData);
+            },
+
+
+        onVer: function (oEvent, oData) {
+        var oView = this.getView();
+
+        // Cargar el fragmento si no está cargado
+        if (!this._oDialog) {
+            this.loadFragment({
+                id: oView.getId(),
+                name: "com.inv.sapfiroriwebinversion.view.security.components.User",
+                controller: this
+            }).then(function (oDialog) {
+                this._oDialog = oDialog;
+                oView.addDependent(this._oDialog);
+
+                var oDialogModel = new JSONModel(oData);
+                this._oDialog.setModel(oDialogModel);
+                // Mostrar el diálogo
+                this._oDialog.open();
+            }.bind(this));
+        } else {
+            // Establecer los datos seleccionados en el modelo del fragmento
+            var oDialogModel = new JSONModel(oData);
+            this._oDialog.setModel(oDialogModel);
+            // Mostrar el diálogo si ya está cargado
+            this._oDialog.open();
+        }
+    },
+
+
+            onCloseDialog: function () {
+            // Cerrar el diálogo
+        
+            this._oDialog.close();
+        
+        },
+            onUpdateDialog: function () {
+            // Cerrar el diálogo
+        
+            this._oDialog.close();
+        
+        },    onDeleteDialog: function () {
+            // Cerrar el diálogo
+        
+            this._oDialog.close();
+        
+        }
+
+
+
     });
 });
