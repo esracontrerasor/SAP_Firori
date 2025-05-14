@@ -112,6 +112,11 @@
                     "name":"RouteUpdate",
                     "pattern":"userUpdate/{USERID}",
                     "target": ["TargetUpdate"]
+                },
+                {
+                    "name":"RouteCreate",
+                    "pattern":"createUser",
+                    "target": ["TargetCreate"]
                 }
             ],
             "targets": {
@@ -152,6 +157,16 @@
                 "TargetUpdate":{
                     "viewId": "userUpdate",
                     "viewName": "UserUpdate",
+                    "viewType": "XML",
+                    "transition":"slide",
+                    "clearControlAggregation": false,
+                    "viewlevel": 2,
+                    "path": "com.inv.sapfiroriwebinversion.view.security.pages",
+                    "viewPath": "com.inv.sapfiroriwebinversion.view.security.pages"
+                },
+                "TargetCreate":{
+                    "viewId": "userCreate",
+                    "viewName": "UserCreate",
                     "viewType": "XML",
                     "transition":"slide",
                     "clearControlAggregation": false,

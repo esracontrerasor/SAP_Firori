@@ -17,7 +17,8 @@
 				htmlText="Hello {/recipient/name}"
 				class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"
 			/>
-       
+      <m:Button id="BotonCrear" text="Crear" press=".onCreate" />
+      <m:Button id="BotonRefresh" text="Refrescar" press=".onRefresh" />
            
     <tl:Table id="IdTable1SecurityTable"
              rows="{/value}"

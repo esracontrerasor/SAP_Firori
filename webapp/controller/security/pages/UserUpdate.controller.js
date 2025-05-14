@@ -48,18 +48,27 @@ sap.ui.define([
         MessageToast.show("Error: " + error.message);
     });
 },
+
+
+
 onSave: function () {
     // Obtener el modelo de la vista
     var oViewModel = this.getView().getModel("userModel");
     // Obtener los datos del modelo
     var oData = oViewModel.getData();
     var oUserData = oViewModel.getData();
-
-     console.log("Data to be sent:", oUserData) // Verificar los datos a enviar
     // Mostrar indicador de carga
     BusyIndicator.show(0);
     delete oUserData._id;
     delete oUserData.DETAIL_ROW
+    delete oUserData.__v
+
+    if (Array.isArray(oUserData.ROLES)) {
+        oUserData.ROLES.forEach(function (role) {
+            delete role._id;
+        });
+    }
+
     // Realizar la solicitud a la API para actualizar el usuario
     //Cambiar URL
     var sUrl = "http://localhost:3020/api/security/updateuser?userid=" + oData.USERID;
@@ -74,6 +83,7 @@ onSave: function () {
     .then(function (response) {
         BusyIndicator.hide(); // Ocultar indicador de carga
         if (!response.ok) {
+            console.log("Data to be sent:", JSON.stringify({user:oUserData}))
             throw new Error("Error al actualizar el usuario");
         }
         return response.json();

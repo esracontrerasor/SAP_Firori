@@ -114,7 +114,54 @@ sap.ui.define([
             this.getRouter().navTo("RouteUpdate");        
             this._oDialog.close();
         
-        }
+        },
+        onCreate: function () {
+            // Navegar a la vista de creación
+            this.getRouter().navTo("RouteCreate");
+            this._oDialog.close();
+        },
+        onDelete: function () {
+            // Cerrar el diálogo
+            this.getRouter().navTo("RouteDelete");
+            this._oDialog.close();
+        },
+        onRefresh: function () {
+            BusyIndicator.show(0);
+
+            const oTable = this.byId("IdTable1SecurityTable");
+            const oModel = new JSONModel();
+
+            // Construir la URL
+            var sUrl = "http://localhost:3020/api/security/users";
+
+                fetch(sUrl, {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                })
+                .then(function (response) {
+                    BusyIndicator.hide(); // Ocultar indicador de carga
+                    if (!response.ok) {
+                        // Manejar el error de autenticación
+                        throw new Error("Error en la autenticación");
+                    }
+                    return response.json();
+                })
+                .then(function (data) {
+                    // Asignar los datos obtenidos al modelo
+                    oModel.setData({ users: data.value }); // Asegúrate de que "data.value" sea el array de usuarios
+                    oTable.setModel(oModel); // Asignar el modelo a la tabla
+
+                    // Vincular la tabla al modelo
+                    oTable.bindRows("/users"); // Vincular las filas de la tabla al array "users"
+                }.bind(this))
+                .catch(function (error) {
+                    BusyIndicator.hide(); // Ocultar indicador de carga
+                    // Manejar el error de la solicitud
+                    MessageToast.show("Error: " + error.message);
+                });
+        },
 
 
 

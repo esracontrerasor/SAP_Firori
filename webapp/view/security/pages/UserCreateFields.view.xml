@@ -1,0 +1,89 @@
+<mvc:View
+    controllerName="com.inv.sapfiroriwebinversion.controller.security.pages.UserCreate"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:tnt="sap.ui.core"
+    xmlns:tl="sap.ui.table"
+    xmlns:core="sap.ui.core.mvc"
+>
+        
+        <m:VBox id="IDGenVBox" class="sapUiSmallMargin">
+        <!-- Información del usuario -->
+        <m:Label id="TextCreate1" text="Usuario" />
+        <m:Input id="InputCreate" value="{userModel>/USERID}" />
+
+        <m:Label id="TextCreate2" text="Nombre completo" />
+        <m:Input id="InputCreate1" value="{userModel>/USERNAME}" />
+
+        <m:Label id="TextCreate3" text="Correo electrónico" />
+        <m:Input id="InputCreate2" value="{userModel>/EMAIL}" />
+
+        <m:Label id="TextCreate4" text="Alias" />
+        <m:Input id="InputCreate3" value="{userModel>/ALIAS}" />
+
+        <m:Label id="TextCreate5" text="Nombre(s)" />
+        <m:Input id="InputCreate4" value="{userModel>/FIRSTNAME}" />
+
+        <m:Label id="TextCreate6" text="Apellido(s)" />
+        <m:Input id="InputCreate5" value="{userModel>/LASTNAME}" />
+
+        <m:Label id="TextCreate7" text="Fecha de nacimiento" />
+        <m:Input id="InputCreate6" value="{userModel>/BIRTHDAYDATE}" />
+
+        <m:Label id="TextCreate8" text="Teléfono" />
+        <m:Input id="InputCreate7" value="{userModel>/PHONENUMBER}" />
+
+        <m:Label id="TextCreate9" text="Extensión" />
+        <m:Input id="InputCreate8" value="{userModel>/EXTENSION}" />
+
+        <m:Label id="TextCreate10" text="ID de empleado" />
+        <m:Input id="InputCreate9" value="{userModel>/EMPLOYEEID}" />
+
+        <m:Label id="TextCreate11" text="Puesto" />
+        <m:Input id="InputCreate10" value="{userModel>/FUNCTION}" />
+
+        <m:Label id="TextCreate12" text="Departamento" />
+        <m:Input id="InputCreate11" value="{userModel>/DEPARTMENT}" />
+
+        <m:Label id="TextCreate13" text="ID de la compañía" />
+        <m:Input id="InputCreate12" value="{userModel>/COMPANYID}" />
+
+        <m:Label id="TextCreate14" text="Nombre de la compañía" />
+        <m:Input id="InputCreate13" value="{userModel>/COMPANYNAME}" />
+
+        <m:Label id="TextCreate15" text="Alias de la compañía" />
+        <m:Input id="InputCreate14" value="{userModel>/COMPANYALIAS}" />
+
+        <m:Label id="TextCreate16" text="CEDIID" />
+        <m:Input id="InputCreate15" value="{userModel>/CEDIID}" />
+
+        <m:Label id="TextCreate17" text="Calle" />
+        <m:Input id="InputCreate16" value="{userModel>/STREET}" />
+
+        <m:Label id="TextCreate18" text="Código postal" />
+        <m:Input id="InputCreate17" value="{userModel>/POSTALCODE}" />
+
+        <m:Label id="TextCreate19" text="Ciudad" />
+        <m:Input id="InputCreate18" value="{userModel>/CITY}" />
+
+        <m:Label id="TextCreate20" text="Región" />
+        <m:Input id="InputCreate19" value="{userModel>/REGION}" />
+
+        <m:Label id="TextCreate21" text="Estado" />
+        <m:Input id="InputCreate20" value="{userModel>/STATE}" />
+
+        <m:Label id="TextCreate22" text="País" />
+        <m:Input id="InputCreate21" value="{userModel>/COUNTRY}" />
+
+        <!-- Subdocumentos: Roles -->
+        <m:Label id="TextCreate23" text="Roles" />
+        <m:List id="RolesList1" items="{userModel>/ROLES}">
+            <m:StandardListItem id="CreateListItem1"
+                title="{userModel>ROLEID}"
+                description="{userModel>ROLEIDSAP}" />
+        </m:List>
+
+        <!-- Botón para guardar -->
+        <m:Button id="CreateButton" text="Crear" press=".onSave" />
+    </m:VBox>
+</mvc:View> 
