@@ -109,21 +109,28 @@ sap.ui.define([
             });       
             this._oDialog.close();
         
-        },    onDeleteDialog: function () {
-            // Cerrar el diálogo
-            this.getRouter().navTo("RouteUpdate");        
-            this._oDialog.close();
-        
         },
         onCreate: function () {
             // Navegar a la vista de creación
             this.getRouter().navTo("RouteCreate");
-            this._oDialog.close();
         },
-        onDelete: function () {
-            // Cerrar el diálogo
-            this.getRouter().navTo("RouteDelete");
-            this._oDialog.close();
+        onDeleteDialog: function () {
+                var oView = this.getView();
+
+                // Cargar el fragmento si no está cargado
+                if (!this._oDeleteDialog) {
+                    this.loadFragment({
+                        id: oView.getId(),
+                        name: "com.inv.sapfiroriwebinversion.view.security.components.UserDelete",
+                        controller: this
+                    }).then(function (oDialog) {
+                        this._oDeleteDialog = oDialog;
+                        oView.addDependent(this._oDeleteDialog);
+                        this._oDeleteDialog.open();
+                    }.bind(this));
+                } else {
+                    this._oDeleteDialog.open();
+                }
         },
         onRefresh: function () {
             BusyIndicator.show(0);
@@ -162,6 +169,44 @@ sap.ui.define([
                     MessageToast.show("Error: " + error.message);
                 });
         },
+            onConfirmDelete: function () {
+            // Obtener el usuario seleccionado del modelo del diálogo
+            var oData = this._oDialog.getModel().getData();
+
+            // Mostrar indicador de carga
+            BusyIndicator.show(0);
+
+            // Construir la URL para la solicitud DELETE
+            var sUrl = "http://localhost:3020/api/security/deleteusers?userid=" + oData.USERID;
+
+            fetch(sUrl, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(function (response) {
+                BusyIndicator.hide(); // Ocultar indicador de carga
+                if (!response.ok) {
+                    throw new Error("Error al eliminar el usuario");
+                }
+                MessageToast.show("Usuario eliminado correctamente");
+                this.onRefresh(); // Actualizar la tabla después de eliminar
+                this.onCloseDialog(); // Cerrar el diálogo de confirmación
+            }.bind(this))
+            .catch(function (error) {
+                BusyIndicator.hide(); // Ocultar indicador de carga
+                MessageToast.show("Error: " + error.message);
+            });
+
+            // Cerrar el diálogo
+            this._oDeleteDialog.close();
+        },
+
+        onCancelDelete: function () {
+            // Cerrar el diálogo sin realizar ninguna acción
+            this._oDeleteDialog.close();
+        }
 
 
 
