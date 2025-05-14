@@ -1,0 +1,89 @@
+<mvc:View
+    controllerName="com.inv.sapfiroriwebinversion.controller.security.pages.UserUpdate"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:tnt="sap.ui.core"
+    xmlns:tl="sap.ui.table"
+    xmlns:core="sap.ui.core.mvc"
+>
+        
+        <m:VBox id="_IDGenVBox" class="sapUiSmallMargin">
+        <!-- Información del usuario -->
+        <m:Label id="_IDGenLabel1" text="Usuario" />
+        <m:Input id="_IDGenInput" value="{userModel>/USERID}" editable="false" />
+
+        <m:Label id="_IDGenLabel2" text="Nombre completo" />
+        <m:Input id="_IDGenInput1" value="{userModel>/USERNAME}" />
+
+        <m:Label id="_IDGenLabel3" text="Correo electrónico" />
+        <m:Input id="_IDGenInput2" value="{userModel>/EMAIL}" />
+
+        <m:Label id="_IDGenLabel4" text="Alias" />
+        <m:Input id="_IDGenInput3" value="{userModel>/ALIAS}" />
+
+        <m:Label id="_IDGenLabel5" text="Nombre(s)" />
+        <m:Input id="_IDGenInput4" value="{userModel>/FIRSTNAME}" />
+
+        <m:Label id="_IDGenLabel6" text="Apellido(s)" />
+        <m:Input id="_IDGenInput5" value="{userModel>/LASTNAME}" />
+
+        <m:Label id="_IDGenLabel7" text="Fecha de nacimiento" />
+        <m:Input id="_IDGenInput6" value="{userModel>/BIRTHDAYDATE}" />
+
+        <m:Label id="_IDGenLabel8" text="Teléfono" />
+        <m:Input id="_IDGenInput7" value="{userModel>/PHONENUMBER}" />
+
+        <m:Label id="_IDGenLabel9" text="Extensión" />
+        <m:Input id="_IDGenInput8" value="{userModel>/EXTENSION}" />
+
+        <m:Label id="_IDGenLabel10" text="ID de empleado" />
+        <m:Input id="_IDGenInput9" value="{userModel>/EMPLOYEEID}" />
+
+        <m:Label id="_IDGenLabel11" text="Puesto" />
+        <m:Input id="_IDGenInput10" value="{userModel>/FUNCTION}" />
+
+        <m:Label id="_IDGenLabel12" text="Departamento" />
+        <m:Input id="_IDGenInput11" value="{userModel>/DEPARTMENT}" />
+
+        <m:Label id="_IDGenLabel13" text="ID de la compañía" />
+        <m:Input id="_IDGenInput12" value="{userModel>/COMPANYID}" />
+
+        <m:Label id="_IDGenLabel14" text="Nombre de la compañía" />
+        <m:Input id="_IDGenInput13" value="{userModel>/COMPANYNAME}" />
+
+        <m:Label id="_IDGenLabel15" text="Alias de la compañía" />
+        <m:Input id="_IDGenInput14" value="{userModel>/COMPANYALIAS}" />
+
+        <m:Label id="_IDGenLabel16" text="CEDIID" />
+        <m:Input id="_IDGenInput15" value="{userModel>/CEDIID}" />
+
+        <m:Label id="_IDGenLabel17" text="Calle" />
+        <m:Input id="_IDGenInput16" value="{userModel>/STREET}" />
+
+        <m:Label id="_IDGenLabel18" text="Código postal" />
+        <m:Input id="_IDGenInput17" value="{userModel>/POSTALCODE}" />
+
+        <m:Label id="_IDGenLabel19" text="Ciudad" />
+        <m:Input id="_IDGenInput18" value="{userModel>/CITY}" />
+
+        <m:Label id="_IDGenLabel20" text="Región" />
+        <m:Input id="_IDGenInput19" value="{userModel>/REGION}" />
+
+        <m:Label id="_IDGenLabel21" text="Estado" />
+        <m:Input id="_IDGenInput20" value="{userModel>/STATE}" />
+
+        <m:Label id="_IDGenLabel22" text="País" />
+        <m:Input id="_IDGenInput21" value="{userModel>/COUNTRY}" />
+
+        <!-- Subdocumentos: Roles -->
+        <m:Label id="_IDGenLabel23" text="Roles" />
+        <m:List id="RolesList2" items="{userModel>/ROLES}">
+            <m:StandardListItem id="_IDGenStandardListItem1"
+                title="{userModel>ROLEID}"
+                description="{userModel>ROLEIDSAP}" />
+        </m:List>
+
+        <!-- Botón para guardar -->
+        <m:Button id="_IDGenButton" text="Guardar" press=".onSave" />
+    </m:VBox>
+</mvc:View> 

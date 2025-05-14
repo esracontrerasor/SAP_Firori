@@ -49,5 +49,10 @@ sap.ui.define([
 
             toolPage.setSideExpanded(!toolPage.getSideExpanded());
         },
+        onMenuButtonPress2: function () {
+            let toolPage = this.byId("IdToolPage2Security");
+
+            toolPage.setSideExpanded(!toolPage.getSideExpanded());
+        },
     });
 });

@@ -98,18 +98,20 @@ sap.ui.define([
 
             onCloseDialog: function () {
             // Cerrar el diálogo
-        
             this._oDialog.close();
         
         },
             onUpdateDialog: function () {
+            var oData = this._oDialog.getModel().getData();
             // Cerrar el diálogo
-        
+            this.getRouter().navTo("RouteUpdate", {
+                USERID: oData.USERID
+            });       
             this._oDialog.close();
         
         },    onDeleteDialog: function () {
             // Cerrar el diálogo
-        
+            this.getRouter().navTo("RouteUpdate");        
             this._oDialog.close();
         
         }

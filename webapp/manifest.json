@@ -88,7 +88,7 @@
             "routes": [
                 {
                     "name": "Login",
-                    "pattern": "",
+                    "pattern": "/login",
                     "target": [
                         "TargetLogin"
                     ]
@@ -107,6 +107,11 @@
                     "name":"RouteSecurity",
                     "pattern":"security",
                     "target": ["TargetSecurity"]
+                },
+                {
+                    "name":"RouteUpdate",
+                    "pattern":"userUpdate/{USERID}",
+                    "target": ["TargetUpdate"]
                 }
             ],
             "targets": {
@@ -137,6 +142,16 @@
                 "TargetSecurity":{
                     "viewId": "security",
                     "viewName": "Security",
+                    "viewType": "XML",
+                    "transition":"slide",
+                    "clearControlAggregation": false,
+                    "viewlevel": 2,
+                    "path": "com.inv.sapfiroriwebinversion.view.security.pages",
+                    "viewPath": "com.inv.sapfiroriwebinversion.view.security.pages"
+                },
+                "TargetUpdate":{
+                    "viewId": "userUpdate",
+                    "viewName": "UserUpdate",
                     "viewType": "XML",
                     "transition":"slide",
                     "clearControlAggregation": false,
