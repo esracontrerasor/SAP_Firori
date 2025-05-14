@@ -75,10 +75,17 @@
         <m:Label id="TextCreate22" text="País" />
         <m:Input id="InputCreate21" value="{userModel>/COUNTRY}" />
 
-        <!-- Subdocumentos: Roles -->
-        <m:Label id="TextCreate23" text="Roles" />
+       <m:Label id="_IDGenLabel24" text="Seleccionar Rol" />
+        <m:ComboBox id="ComboBoxRoles" items="{rolesModel>/roles}">
+            <m:items>
+                <tnt:Item id="_IDGenItem" key="{rolesModel>ROLEID}" text="{rolesModel>ROLENAME}" />
+            </m:items>
+        </m:ComboBox>
+        <m:Button id="_IDGenButton3" text="Añadir Rol" press=".onAddRole" />
+
+        <m:Label id="_IDGenLabel25" text="Roles Seleccionados" />
         <m:List id="RolesList1" items="{userModel>/ROLES}">
-            <m:StandardListItem id="CreateListItem1"
+            <m:StandardListItem id="_IDGenStandardListItem2"
                 title="{userModel>ROLEID}"
                 description="{userModel>ROLEIDSAP}" />
         </m:List>

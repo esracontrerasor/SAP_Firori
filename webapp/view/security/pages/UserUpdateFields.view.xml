@@ -4,7 +4,7 @@
     xmlns:m="sap.m"
     xmlns:tnt="sap.ui.core"
     xmlns:tl="sap.ui.table"
-    xmlns:core="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
 >
         
         <m:VBox id="_IDGenVBox" class="sapUiSmallMargin">
@@ -75,12 +75,31 @@
         <m:Label id="_IDGenLabel22" text="País" />
         <m:Input id="_IDGenInput21" value="{userModel>/COUNTRY}" />
 
-        <!-- Subdocumentos: Roles -->
-        <m:Label id="_IDGenLabel23" text="Roles" />
-        <m:List id="RolesList2" items="{userModel>/ROLES}">
-            <m:StandardListItem id="_IDGenStandardListItem1"
-                title="{userModel>ROLEID}"
-                description="{userModel>ROLEIDSAP}" />
+        
+       <m:Label id="IDGenLabel24" text="Seleccionar Rol" />
+        <m:ComboBox id="ComboBoxRoles1" items="{rolesModel>/roles}">
+            <m:items>
+                <tnt:Item id="IDGenItem" key="{rolesModel>ROLEID}" text="{rolesModel>ROLENAME}" />
+            </m:items>
+        </m:ComboBox>
+        <m:Button id="IDGenButton3" text="Añadir Rol" press=".onAddRole" />
+
+        <m:Label id="_DGenLabel25" text="Roles Seleccionados" />
+        <m:List id="_RolesList2" items="{userModel>/ROLES}">
+            <m:CustomListItem id="IDGenCustomListItem1">
+                <m:HBox id="IDGenHBox">
+                    <m:Text id="IDGenText" text="{userModel>ROLEID}" class="sapUiSmallMarginEnd" />
+                    <m:Text id="IDGenText2" text="{userModel>ROLEIDSAP}" class="sapUiSmallMarginEnd" />
+                    <m:Button id="IDGenButton4"
+                        icon="sap-icon://delete"
+                        type="Reject"
+                        press=".onRemoveRole">
+                        <m:customData>
+                            <core:CustomData id="IDGenCustomData" key="roleid" value="{userModel>ROLEID}" />
+                        </m:customData>
+                    </m:Button>
+                </m:HBox>
+            </m:CustomListItem>
         </m:List>
 
         <!-- Botón para guardar -->
