@@ -1,0 +1,86 @@
+<mvc:View
+    controllerName="com.inv.sapfiroriwebinversion.controller.security.pages.CatalogsTable"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:tl="sap.ui.table"
+    xmlns:core="sap.ui.core"
+>
+    <m:Panel
+        id="_IDGenPanelCatalogs"
+        headerText="{i18n>Catalogos}"
+        class="sapUiResponsiveMargin"
+        width="auto"
+    >
+        <m:content>
+            <m:Button text="{i18n>Crear}"    press=".onCreate"  icon="sap-icon://add"     />
+            <m:Button text="{i18n>Refrescar}" press=".onRefresh" icon="sap-icon://refresh" />
+
+            <tl:TreeTable
+                id="IdTree1Catalogs"
+                rows="{
+                    path: '/catalogs',
+                    parameters: { arrayNames: ['VALUES'] }
+                }"
+                selectionMode="Single"
+                rowSelectionChange=".onRowSelectionChange"
+                visibleRowCount="50"
+                enableColumnReordering="true"
+                alternateRowColors="true"
+                busyIndicatorDelay="0"
+            >
+                <tl:columns>
+                    <!-- Nivel 1 = catálogo: LABELID | Nivel 2 = hijo: VALUEID -->
+                    <tl:Column sortProperty="LABELID" width="12rem">
+                        <m:Label text="{i18n>LabelID}" />
+                        <tl:template>
+                            <m:Text
+                              text="{LABELID}"
+                            />
+                        </tl:template>
+                    </tl:Column>
+
+                    <!-- Nivel 1 = catálogo: LABEL | Nivel 2 = hijo: VALUE -->
+                    <tl:Column sortProperty="LABEL" width="20rem">
+                        <m:Label text="{i18n>Label}" />
+                        <tl:template>
+                            <m:Text wrapping="true"
+                              text="{LABEL}"
+                            />
+                        </tl:template>
+                    </tl:Column>
+
+                    <!-- Alias solo en nodos hijos (VALUEID existe) -->
+                    <tl:Column sortProperty="ALIAS" width="12rem">
+                        <m:Label text="{i18n>Alias}" />
+                        <tl:template>
+                            <m:Text
+                                text="{ALIAS}"
+                                wrapping="false"
+                            />
+                        </tl:template>
+                    </tl:Column>
+
+                    <!-- Secuencia: hijo o padre -->
+                    <tl:Column sortProperty="SEQUENCE" width="8rem">
+                        <m:Label text="{i18n>Sequence}" />
+                        <tl:template>
+                            <m:Text
+                              text="{SEQUENCE} "
+                            />
+                        </tl:template>
+                    </tl:Column>
+
+                    <!-- Ruta solo en hijos -->
+                    <tl:Column sortProperty="DESCRIPTION" width="24rem">
+                        <m:Label text="{i18n>Description}" />
+                        <tl:template>
+                            <m:Text
+                                text="{DESCRIPTION}"
+                            />
+                        </tl:template>
+                    </tl:Column>
+                </tl:columns>
+            </tl:TreeTable>
+        </m:content>
+    </m:Panel>
+</mvc:View>
