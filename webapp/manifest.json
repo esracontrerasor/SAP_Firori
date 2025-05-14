@@ -117,6 +117,16 @@
                     "name":"RouteCreate",
                     "pattern":"createUser",
                     "target": ["TargetCreate"]
+                },
+                {
+                "name": "RouteCatalogs",
+                "pattern": "catalogs",
+                "target": ["TargetCatalogs"]
+                },
+                {
+                "name": "RouteCatalogCreate",
+                "pattern": "catalogs/create",
+                "target": ["TargetCatalogCreate"]
                 }
             ],
             "targets": {
@@ -173,6 +183,24 @@
                     "viewlevel": 2,
                     "path": "com.inv.sapfiroriwebinversion.view.security.pages",
                     "viewPath": "com.inv.sapfiroriwebinversion.view.security.pages"
+                },
+                "TargetCatalogs": {
+                "viewId": "catalogsList",
+                "viewName": "CatalogsTable",
+                "viewType": "XML",
+                "transition": "slide",
+                "viewLevel": 2,
+                "path": "com.inv.sapfiroriwebinversion.view.security.pages",
+                "viewPath": "com.inv.sapfiroriwebinversion.view.security.pages"
+                },
+                "TargetCatalogCreate": {
+                "viewId": "catalogCreate",
+                "viewName": "CatalogCreate",
+                "viewType": "XML",
+                "transition": "slide",
+                "viewLevel": 3,
+                "path": "com.inv.sapfiroriwebinversion.view.security.pages",
+                "viewPath": "com.inv.sapfiroriwebinversion.view.security.pages"
                 }
             }
         },
