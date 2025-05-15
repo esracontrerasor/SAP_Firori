@@ -8,6 +8,7 @@ sap.ui.define([
     "use strict";
 
     return BaseController.extend("com.inv.sapfiroriwebinversion.controller.security.pages.Security", {
+        //Contructor al llamar la pestaña de crear role
         onInit: function () {
         /* Colocar cuando este getproceso
         const oRolesModel = new JSONModel();

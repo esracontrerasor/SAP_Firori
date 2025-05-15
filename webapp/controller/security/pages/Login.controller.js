@@ -7,7 +7,7 @@ sap.ui.define([
     "use strict";
 
     return BaseController.extend("com.inv.sapfiroriwebinversion.controller.security.Login", {
-        
+        //Inicializador de la clase LOGIN
         onInit: function () {
            var oModel = new sap.ui.model.json.JSONModel({
             username: "",
@@ -18,15 +18,17 @@ sap.ui.define([
 
         _onRouteMatched: function () {
             BusyIndicator.show(0);
-
             const tText = this.getView().byId("IdText1Login");
         },
+
+        //Funcion al precionar el boton de iniciar sesion
         onLoginPress: function () {
+            //Obtener los datos de los campos de username y email
             var oModel = this.getView().getModel();
             var sUsername = oModel.getProperty("/username");
             var sEmail = oModel.getProperty("/Email");
             
-            
+            //Verificar que no esten vacios
             if (sUsername && sEmail) {
                 // Mostrar indicador de carga
                 BusyIndicator.show(0);
@@ -66,6 +68,7 @@ sap.ui.define([
                         MessageToast.show("Usuario o correo incorrecto");
                         return;
                     }
+                    //Mensaje de inicio de sesion correcto
                     MessageToast.show("Inicio de sesión exitoso");
                     this.getRouter().navTo("RouteSecurity"); // Redirigir a otra vista
                 }.bind(this))

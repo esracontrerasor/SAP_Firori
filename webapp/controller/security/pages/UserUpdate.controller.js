@@ -8,6 +8,7 @@ sap.ui.define([
     "use strict";
 
     return BaseController.extend("com.inv.sapfiroriwebinversion.controller.security.pages.SecurityTable", {
+        //Controlador con la llamda de roles para colocar en el combobox
         onInit: function () {
  
         const oRolesModel = new JSONModel();
@@ -88,7 +89,7 @@ sap.ui.define([
         MessageToast.show("Error: " + error.message);
     });
 },
-
+    //Agregar un rol a la lista
     onAddRole: function () {
         var oView = this.getView();
         var oComboBox = oView.byId("ComboBoxRoles1");
@@ -126,6 +127,8 @@ sap.ui.define([
             MessageToast.show("Rol añadido correctamente.");
         }
     },
+
+    //Remover un rol de la lista 
     onRemoveRole: function (oEvent) {
         // Obtener el ID del rol a eliminar
         var sRoleId = oEvent.getSource().data("roleid");
@@ -144,14 +147,16 @@ sap.ui.define([
         // Mostrar un mensaje de confirmación
         MessageToast.show("Rol eliminado correctamente.");
     },
+    //Guardar cambios y mandarlos a la api
     onSave: function () {
         // Obtener el modelo de la vista
         var oViewModel = this.getView().getModel("userModel");
         // Obtener los datos del modelo
         var oData = oViewModel.getData();
         var oUserData = oViewModel.getData();
-        // Mostrar indicador de carga
+        // Mostrar indicador de carga 
         BusyIndicator.show(0);
+        //Elimiacion de parametros 
         delete oUserData._id;
         delete oUserData.DETAIL_ROW
         delete oUserData.__v

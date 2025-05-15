@@ -8,8 +8,9 @@ sap.ui.define([
     "use strict";
 
     return BaseController.extend("com.inv.sapfiroriwebinversion.controller.security.pages.SecurityTable", {
+        //Constructor de la clase de create User
         onInit: function () {
-         
+            //Creacion de un Json para almacenar los roles que se guardaran ene el combobox
         const oRolesModel = new JSONModel();
         var sUrl = "http://localhost:3020/api/security/roles";
 
@@ -28,18 +29,15 @@ sap.ui.define([
             return response.json();
         })
         .then(function (data) {
-                // Asignar los datos al modelo
+                // Asignar los datos al al modelo
         oRolesModel.setData({ roles: data.value });
-        console.log("Roles data:", data.value); // Verificar los datos recibidos
     
         }.bind(this))
         .catch(function (error) {
             BusyIndicator.hide(); // Ocultar indicador de carga
             MessageToast.show("Error: " + error.message);
         });
-
-
-
+        //Color los datos en el combobox
         this.getView().setModel(oRolesModel, "rolesModel");
 
         // Inicializar el modelo para los datos del usuario
@@ -54,6 +52,7 @@ sap.ui.define([
     },
     _onRouteMatched: function (oEvent) {
     },
+    //Funcion on ROles para obtener todos los roles 
     onRoles:function(){
         // Mostrar indicador de carga
         BusyIndicator.show(0);
@@ -87,7 +86,7 @@ sap.ui.define([
             MessageToast.show("Error: " + error.message);
         });
     },
-
+    //Funcion para agregar un rol a la lista
     onAddRole: function () {
         var oView = this.getView();
         var oComboBox = oView.byId("ComboBoxRoles");
@@ -126,7 +125,7 @@ sap.ui.define([
         }
     },
 
-
+    //Funcion para guardar los datos que seran mandados a la api con un create
     onSave: function () {
         // Obtener el modelo de la vista
         var oView = this.getView();
