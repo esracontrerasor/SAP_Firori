@@ -169,6 +169,13 @@ sap.ui.define([
                     MessageToast.show("Error: " + error.message);
                 });
         },
+        onRoles: function () {
+            this.getRouter().navTo("RouteRoles");
+        },
+
+        onCatalogs: function () {
+            this.getRouter().navTo("RouteCatalogs");
+        },
             onConfirmDelete: function () {
             // Obtener el usuario seleccionado del modelo del diálogo
             var oData = this._oDialog.getModel().getData();
@@ -210,5 +217,5 @@ sap.ui.define([
 
 
 
-    });
+    })
 });

@@ -1,0 +1,23 @@
+<mvc:View
+    controllerName="com.inv.sapfiroriwebinversion.controller.security.pages.RoleCreate"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:tnt="sap.ui.core"
+    xmlns:tl="sap.ui.table"
+    xmlns:core="sap.ui.core.mvc">
+       <m:VBox id="IDGenVBox2" class="sapUiSmallMargin">
+        <!-- Información del usuario -->
+        <m:Label id="TextCreate1Role" text="RoleID" />
+        <m:Input id="InputCreateRole" value="{userModel>/ROLEID}" />
+
+        <m:Label id="TextCreate2Role" text="Nombre" />
+        <m:Input id="InputCreate1Role" value="{userModel>/ROLENAME}" />
+
+        <m:Label id="TextCreate3Role" text="Descripcion" />
+        <m:Input id="InputCreate2Role" value="{userModel>/DESCRIPTION}" />
+    
+
+        <!-- Botón para guardar -->
+        <m:Button id="BotonCrearRol" text="Crear" press=".onSave" />
+    </m:VBox>
+</mvc:View> 

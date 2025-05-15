@@ -120,13 +120,28 @@
                 },
                 {
                 "name": "RouteCatalogs",
-                "pattern": "catalogs",
+                "pattern": "catalogos",
                 "target": ["TargetCatalogs"]
                 },
                 {
                 "name": "RouteCatalogCreate",
-                "pattern": "catalogs/create",
+                "pattern": "catalogos/create",
                 "target": ["TargetCatalogCreate"]
+                },
+                {
+                    "name":"RouteRoles",
+                    "pattern":"roles",
+                    "target": ["TargetRoles"]
+                },
+                {
+                "name": "RouteRolesCreate",
+                "pattern": "role/create",
+                "target": ["TargetRolesCreate"]
+                },
+                {
+                "name": "RouteRolesUpdate",
+                "pattern": "role/update/{ROLEID}",
+                "target": ["TargetRolesUpdate"]
                 }
             ],
             "targets": {
@@ -184,23 +199,51 @@
                     "path": "com.inv.sapfiroriwebinversion.view.security.pages",
                     "viewPath": "com.inv.sapfiroriwebinversion.view.security.pages"
                 },
-                "TargetCatalogs": {
-                "viewId": "catalogsList",
-                "viewName": "CatalogsTable",
-                "viewType": "XML",
-                "transition": "slide",
-                "viewLevel": 2,
-                "path": "com.inv.sapfiroriwebinversion.view.security.pages",
-                "viewPath": "com.inv.sapfiroriwebinversion.view.security.pages"
+                    "TargetCatalogs": {
+                    "viewId": "catalogsList",
+                    "viewName": "CatalogsTable",
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "viewLevel": 2,
+                    "path": "com.inv.sapfiroriwebinversion.view.security.pages",
+                    "viewPath": "com.inv.sapfiroriwebinversion.view.security.pages"
                 },
-                "TargetCatalogCreate": {
-                "viewId": "catalogCreate",
-                "viewName": "CatalogCreate",
-                "viewType": "XML",
-                "transition": "slide",
-                "viewLevel": 3,
-                "path": "com.inv.sapfiroriwebinversion.view.security.pages",
-                "viewPath": "com.inv.sapfiroriwebinversion.view.security.pages"
+                    "TargetCatalogCreate": {
+                    "viewId": "catalogCreate",
+                    "viewName": "CatalogCreate",
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "viewLevel": 3,
+                    "path": "com.inv.sapfiroriwebinversion.view.security.pages",
+                    "viewPath": "com.inv.sapfiroriwebinversion.view.security.pages"
+                },
+                    "TargetRoles": {
+                    "viewId": "rolesTable",
+                    "viewName": "RolesTable",
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "viewLevel": 2,
+                    "path": "com.inv.sapfiroriwebinversion.view.security.pages",
+                    "viewPath": "com.inv.sapfiroriwebinversion.view.security.pages"
+                },
+                    "TargetRolesCreate": {
+                    "viewId": "roleCreate",
+                    "viewName": "RoleCreate",
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "viewLevel": 2,
+                    "path": "com.inv.sapfiroriwebinversion.view.security.pages",
+                    "viewPath": "com.inv.sapfiroriwebinversion.view.security.pages"
+                },
+                "TargetRolesUpdate":{
+                    "viewId": "roleUpdate",
+                    "viewName": "RoleUpdate",
+                    "viewType": "XML",
+                    "transition":"slide",
+                    "clearControlAggregation": false,
+                    "viewlevel": 2,
+                    "path": "com.inv.sapfiroriwebinversion.view.security.pages",
+                    "viewPath": "com.inv.sapfiroriwebinversion.view.security.pages"
                 }
             }
         },

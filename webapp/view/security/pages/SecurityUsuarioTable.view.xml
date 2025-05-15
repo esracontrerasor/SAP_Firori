@@ -6,26 +6,29 @@
     xmlns:tl="sap.ui.table"
     xmlns:core="sap.ui.core.mvc"
 >
-     <m:Panel id="_IDGenPanel"
+     <m:Panel id="IdPanelSecurity"
 		headerText="{i18n>Usuarios }"
 		class="sapUiResponsiveMargin"
 		width="auto"
 	>
 		<m:content>
            
-			<m:FormattedText id="_IDGenFormattedText"
+			<m:FormattedText id="IDGenFormattedText"
 				htmlText="Hello {/recipient/name}"
 				class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"
 			/>
-      <m:Button id="BotonCrear" text="Crear" press=".onCreate" />
-      <m:Button id="BotonRefresh" text="Refrescar" press=".onRefresh" />
-           
+      <m:Button id="BotonCrearUsuario" text="Crear" press=".onCreate" />
+      <m:Button id="BotonRefreshUsuario" text="Refrescar" press=".onRefresh" />
+    <m:Button id="BotonCatalogosUsuario" text="Catalogos" press=".onCatalogs" />
+    <m:Button id="BotonRolesUsuario" text="Roles" press=".onRoles" />
+  
     <tl:Table id="IdTable1SecurityTable"
              rows="{/value}"
             selectionMode="Single"
             alternateRowColors="true"
             selectionBehavior="RowOnly"
-            rowSelectionChange=".onRowSelectionChange"
+            rowSelectionChange=".onRowSelectionChange"                
+            visibleRowCount="30"
             enableSelectAll="false"
             enableColumnReordering="true"
             rowActionCount="2"

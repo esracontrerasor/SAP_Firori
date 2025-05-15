@@ -1,0 +1,67 @@
+<mvc:View
+    controllerName="com.inv.sapfiroriwebinversion.controller.security.pages.RolesTable"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:tl="sap.ui.table"
+    xmlns:core="sap.ui.core"
+>
+    <m:Panel
+        id="_IDGenPanelRoles"
+        headerText="Roles"
+        class="sapUiResponsiveMargin"
+        width="auto"
+    >
+        <m:content>
+            <m:Button id="BotonCrearRole" text="{i18n>Crear}"    press=".onCreate"  icon="sap-icon://add"     />
+            <m:Button id="BotonRefreshRole" text="{i18n>Refrescar}" press=".onRefresh" icon="sap-icon://refresh" />
+
+            <tl:Table
+                id="IdTree1Roles"
+                rows="{
+                    path: '/roles',
+                    parameters: { arrayNames: ['VALUES'] }
+                }"
+            selectionMode="Single"
+            alternateRowColors="true"
+            selectionBehavior="RowOnly"
+            rowSelectionChange=".onRowSelectionChange"                
+            visibleRowCount="30"
+            enableSelectAll="false"
+            enableColumnReordering="true"
+            rowActionCount="2"
+            busyIndicatorDelay="0">
+                <tl:columns>
+                    <!-- Nivel 1 = catálogo: LABELID | Nivel 2 = hijo: VALUEID -->
+                    <tl:Column id="IdRoleColumn" sortProperty="ROLEID" width="12rem">
+                        <m:Label id="RoleIdRole" text="ID ROL" />
+                        <tl:template>
+                            <m:Text id="RoleId"
+                              text="{ROLEID}"
+                            />
+                        </tl:template>
+                    </tl:Column>
+
+                    <!-- Nivel 1 = catálogo: LABEL | Nivel 2 = hijo: VALUE -->
+                    <tl:Column id="RoleNameColumn" sortProperty="ROLENAME" width="20rem">
+                        <m:Label id="RoleNameRole" text="Nombre del rol" />
+                        <tl:template>
+                            <m:Text id="RoleName" wrapping="true"
+                              text="{ROLENAME}"
+                            />
+                        </tl:template>
+                    </tl:Column>
+
+                    <!-- Alias solo en nodos hijos (VALUEID existe) -->
+                    <tl:Column id="DescriptionRoleColumn" sortProperty="DESCRIPTION" width="12rem">
+                        <m:Label id="DescriptonRole" text="Descripcion " />
+                        <tl:template>
+                            <m:Text id="DescriptionRole" wrapping="true"
+                                text="{DESCRIPTION}" 
+                            />
+                        </tl:template>
+                    </tl:Column>
+                </tl:columns>
+            </tl:Table>
+        </m:content>
+    </m:Panel>
+</mvc:View>

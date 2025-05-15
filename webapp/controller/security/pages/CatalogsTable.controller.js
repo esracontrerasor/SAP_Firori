@@ -18,10 +18,7 @@ sap.ui.define([
 
             const oTree = this.byId("IdTree1Catalogs");
             const oModel = new JSONModel();
-            
-    console.log("oTree:", oTree);
-    console.log("oModel:", oModel);
-
+      
             fetch("http://localhost:3020/api/security/catalogs", {
                 method: "GET",
                 headers: { "Content-Type": "application/json" }
@@ -35,7 +32,6 @@ sap.ui.define([
             })
             .then(data => {
                 // data.value es el array de catálogos
-                console.log("Catalogs payload:", data);
                 oModel.setData({ catalogs: data.value });
                 oTree.setModel(oModel);
                 // Binding con arrayNames para que TreeTable expanda la propiedad VALUES

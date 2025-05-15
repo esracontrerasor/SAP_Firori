@@ -1,0 +1,30 @@
+<core:FragmentDefinition 
+controllerName="com.inv.sapfiroriwebinversion.controller.security.pages.RolesTable"
+xmlns="sap.m" 
+xmlns:core="sap.ui.core">
+    <Dialog id="IDUserDialog" title="Detalles del Rol" class="sapUiResponsivePadding">
+        <content>
+            <VBox id="_IDGenVBox2">
+                <Text id="ROLEID" text="Rol Id:                      {/ROLEID}" />
+                <Text id="ROLENAME" text="Nombre:                     {/ROLENAME}" />
+                <Text id="DESCRIPTION" text="Descripcion:                        {/DESCRIPTION}" />
+                <List id="PRIVILEGIOS" items="{/PRIVILEGES}">
+                    <StandardListItem id="IDGenStandardListItem"
+                        title="{PROCESSID}"
+                        description="{PRIVILEGEID}" />
+                </List>
+            </VBox>
+        </content>
+        
+        <buttons>
+            <Button id="EditarButtonRole" text="Editar" press=".onUpdateDialog" />
+        </buttons>
+        
+        <buttons>
+            <Button id="EliminarButtonRole" text="Eliminar" press=".onDeleteDialog" />
+        </buttons>
+        <buttons>
+            <Button id="CerrarButtonRole" text="Cerrar" press=".onCloseDialog" />
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

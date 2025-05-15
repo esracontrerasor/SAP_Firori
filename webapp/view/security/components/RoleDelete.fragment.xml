@@ -1,0 +1,26 @@
+<core:FragmentDefinition 
+controllerName="com.inv.sapfiroriwebinversion.controller.security.pages.RolesTable"
+xmlns="sap.m" 
+xmlns:core="sap.ui.core">
+     <Dialog
+        id="DeleteConfirmationDialogRole"
+        title="Confirmar eliminación"
+        type="Message"
+        draggable="true"
+        resizable="true">
+        <content>
+            <Text id="IDGenText1" text="¿Está seguro de que desea eliminar este Rol?" />
+        </content>
+        <beginButton>
+            <Button id="IDGenButton1"
+                text="Eliminar"
+                type="Reject"
+                press="onConfirmDelete" />
+        </beginButton>
+        <endButton>
+            <Button id="IDGenButton2"
+                text="Cancelar"
+                press="onCancelDelete" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

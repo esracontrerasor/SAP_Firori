@@ -6,14 +6,14 @@
     xmlns:core="sap.ui.core"
 >
     <m:Panel
-        id="_IDGenPanelCatalogs"
+        id="IdPanelCatalogs"
         headerText="{i18n>Catalogos}"
         class="sapUiResponsiveMargin"
         width="auto"
     >
         <m:content>
-            <m:Button id="_IDGenButton4" text="{i18n>Crear}"    press=".onCreate"  icon="sap-icon://add"     />
-            <m:Button id="_IDGenButton5" text="{i18n>Refrescar}" press=".onRefresh" icon="sap-icon://refresh" />
+            <m:Button id="BotonCrearCatalogo" text="{i18n>Crear}"    press=".onCreate"  icon="sap-icon://add"     />
+            <m:Button id="BotonRefresCatalogo" text="{i18n>Refrescar}" press=".onRefresh" icon="sap-icon://refresh" />
 
             <tl:TreeTable
                 id="IdTree1Catalogs"
@@ -30,30 +30,30 @@
             >
                 <tl:columns>
                     <!-- Nivel 1 = catálogo: LABELID | Nivel 2 = hijo: VALUEID -->
-                    <tl:Column id="_IDGenColumn" sortProperty="LABELID" width="12rem">
-                        <m:Label id="_IDGenLabel23" text="{i18n>LabelID}" />
+                    <tl:Column id="IdLabelColumn" sortProperty="LABELID" width="12rem">
+                        <m:Label id="LabelIDCatalogo" text="{i18n>LabelID}" />
                         <tl:template>
-                            <m:Text id="_IDGenText"
+                            <m:Text id="IdTextLabelCatalogo"
                               text="{LABELID}"
                             />
                         </tl:template>
                     </tl:Column>
 
                     <!-- Nivel 1 = catálogo: LABEL | Nivel 2 = hijo: VALUE -->
-                    <tl:Column id="_IDGenColumn1" sortProperty="LABEL" width="20rem">
-                        <m:Label id="_IDGenLabel26" text="{i18n>Label}" />
+                    <tl:Column id="LabelColumn" sortProperty="LABEL" width="20rem">
+                        <m:Label id="LabelCatalogo" text="{i18n>Label}" />
                         <tl:template>
-                            <m:Text id="_IDGenText2" wrapping="true"
+                            <m:Text id="IdLabel" wrapping="true"
                               text="{LABEL}"
                             />
                         </tl:template>
                     </tl:Column>
 
                     <!-- Alias solo en nodos hijos (VALUEID existe) -->
-                    <tl:Column id="_IDGenColumn2" sortProperty="ALIAS" width="12rem">
-                        <m:Label id="_IDGenLabel27" text="{i18n>Alias}" />
+                    <tl:Column id="AliasColumn" sortProperty="ALIAS" width="12rem">
+                        <m:Label id="AliasCatalogo" text="{i18n>Alias}" />
                         <tl:template>
-                            <m:Text id="_IDGenText3"
+                            <m:Text id="IdAlias"
                                 text="{ALIAS}"
                                 wrapping="false"
                             />
@@ -61,20 +61,21 @@
                     </tl:Column>
 
                     <!-- Secuencia: hijo o padre -->
-                    <tl:Column id="_IDGenColumn3" sortProperty="SEQUENCE" width="8rem">
-                        <m:Label id="_IDGenLabel28" text="{i18n>Sequence}" />
+                    <tl:Column id="SequenceColumns" sortProperty="SEQUENCE" width="8rem">
+                        <m:Label id="SecuenceCatalogo" text="{i18n>Sequence}" />
                         <tl:template>
-                            <m:Text id="_IDGenText4"
+                            <m:Text id="IdSecuence"
+                                wrapping="false"
                               text="{SEQUENCE} "
                             />
                         </tl:template>
                     </tl:Column>
 
                     <!-- Ruta solo en hijos -->
-                    <tl:Column id="_IDGenColumn4" sortProperty="DESCRIPTION" width="24rem">
-                        <m:Label id="_IDGenLabel29" text="{i18n>Description}" />
+                    <tl:Column id="DescriptionColumn" sortProperty="DESCRIPTION" width="24rem">
+                        <m:Label id="DescripctionCatalogo" text="{i18n>Description}" />
                         <tl:template>
-                            <m:Text id="_IDGenText5"
+                            <m:Text id="idDescription"
                                 text="{DESCRIPTION}"
                             />
                         </tl:template>

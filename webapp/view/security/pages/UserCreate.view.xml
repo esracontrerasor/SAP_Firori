@@ -12,7 +12,7 @@ xmlns:core="sap.ui.core"
         <tnt:header>
     <f:ShellBar
         id="IdShellBar3Security"
-        title="Pronostico de Ventas"
+        title="Crear Usuario"
         homeIcon="{i18n>login.logo}"
         showMenuButton="true"
         menuButtonPressed="onMenuButtonPress3"

@@ -1,0 +1,23 @@
+<mvc:View
+    controllerName="com.inv.sapfiroriwebinversion.controller.security.pages.RoleUpdate"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns:tnt="sap.ui.core"
+    xmlns:tl="sap.ui.table"
+    xmlns:core="sap.ui.core.mvc">
+       <m:VBox id="IDGenVBoxRole2" class="sapUiSmallMargin">
+        <!-- Información del usuario -->
+        <m:Label id="TextUpdate1Role" text="RoleID" />
+        <m:Input id="InputUpdateRole" value="{userModel>/ROLEID}" editable="false" />
+
+        <m:Label id="TextUpdate2Role" text="Nombre" />
+        <m:Input id="InputUpdate1Role" value="{userModel>/ROLENAME}" />
+
+        <m:Label id="TextUpdate3Role" text="Descripcion" />
+        <m:Input id="InputUpdate2Role" value="{userModel>/DESCRIPTION}" />
+    
+
+        <!-- Botón para guardar -->
+        <m:Button id="BotonActualizarRol" text="Guardar" press=".onSave" />
+    </m:VBox>
+</mvc:View> 
